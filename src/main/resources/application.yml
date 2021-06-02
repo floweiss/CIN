@@ -1,0 +1,14 @@
+server:
+  port: 8080    # optional since default
+
+spring:
+  datasource:
+    name: db_person
+  jpa:
+    generate-ddl: true    # creates database
+    hibernate:
+      ddl-auto: create    # creates schema
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true

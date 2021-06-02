@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Persons</title>
+    </head>
+
+    <body>
+        <form th:action="@{/}">
+            <input th:if="${ !#ctx.containsVariable('all') }" type="hidden" name="all" value="true">
+            <button>show [[ ${all} ? 'only active' : 'all' ]] persons</button>
+        </form>
+
+        <h1>Persons</h1>
+
+        <ul>
+            <li th:each="person: ${persons}">
+                [[ ${person.name} ]]
+            </li>
+        </ul>
+
+    </body>
+</html>
